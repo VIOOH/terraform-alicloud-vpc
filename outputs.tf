@@ -12,9 +12,9 @@ output "availability_zones" {
 }
 
 output "router_id" {
-  value = "${alicloud_route_entry.route_entry.*.router_id}"
+  value = "{${join(",", alicloud_vpc.vpc.*.router_id)}"
 }
 
 output "route_table_id" {
-  value = "${alicloud_route_entry.route_entry.*.route_table_id}"
+  value = "{${join(",", alicloud_vpc.vpc.*.route_table_id)}"
 }
