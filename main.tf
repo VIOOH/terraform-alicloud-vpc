@@ -7,7 +7,7 @@ data "alicloud_instance_types" "default" {
 // Zones data source for availability_zone
 data "alicloud_zones" "default" {
   available_resource_creation = "VSwitch"
-  available_instance_type     = data.alicloud_instance_types.default.instance_types.id
+  available_instance_type     = data.alicloud_instance_types.default.instance_types[0].id
 }
 
 // If there is not specifying vpc_id, the module will launch a new vpc
