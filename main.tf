@@ -12,7 +12,7 @@ data "alicloud_zones" "default" {
 
 // If there is not specifying vpc_id, the module will launch a new vpc
 resource "alicloud_vpc" "vpc" {
-  count       = var.vpc_id ? 1 : 0
+  count       = var.vpc_id == "" ? 1 : 0
   name        = var.vpc_name
   cidr_block  = var.vpc_cidr
   description = var.vpc_description
