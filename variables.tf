@@ -1,7 +1,7 @@
 variable "availability_zones" {
   description = "List available zones to launch several VSwitches."
   type        = list
-  default     = [""]
+  default     = []
 }
 
 variable "number_format" {
